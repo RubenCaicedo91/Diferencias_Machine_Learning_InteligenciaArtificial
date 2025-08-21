@@ -1,6 +1,8 @@
 ===========================================================
+
 # B. Diferencias entre la IA (Inteligencia Artificial) y ML (Machine Learning)
 
+Al conocer la definición de IA y ML, encontramos que los conceptos son muy cercanos, en especial porque uno pertenece al otro. En el mundo de la IA, donde pertenece el ML, se debe conocer la diferencia entre los dos conceptos.
 IA (INTELIGENCIA ARTIFICIAL)
 
 -- **IA** es un término amplio, define las aplicaciones para que una maquina pueda imitar  al ser humano. 
