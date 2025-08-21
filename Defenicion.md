@@ -72,3 +72,11 @@ Aprendizaje por refuerzo
 El aprendizaje por refuerzo es un modelo de machine learning similar al aprendizaje supervisado, pero el algoritmo no se entrena con datos de muestra. Este modelo aprende sobre la marcha mediante prueba y error. Se reforzará una secuencia de resultados exitosos para desarrollar la mejor recomendación o política para un problema determinado.
 
 El sistema IBM Watson que ganó el desafío de Jeopardy! en 2011 es un buen ejemplo. El sistema utilizaba el aprendizaje por refuerzo para saber cuándo intentar una respuesta (o una pregunta, por así decirlo), qué casilla seleccionar en el tablero y cuánto apostar, especialmente en los dobles diarios.
+
+
+
+
+Bibliografia
+
+IA https://cloud.google.com/learn/what-is-artificial-intelligence?hl=es-419
+ML https://www.ibm.com/mx-es/think/topics/machine-learning
