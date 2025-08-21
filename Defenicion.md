@@ -40,39 +40,26 @@ UC Berkeleydesglosa el sistema de aprendizaje de un algoritmo de machine learnin
 
     Un proceso de optimización del modelo: si el modelo puede ajustarse mejor a los puntos de datos en el conjunto de entrenamiento, entonces los pesos se ajustan para reducir la discrepancia entre el ejemplo conocido y la estimación del modelo. El algoritmo repetirá este proceso iterativo de ''evaluar y optimizar", actualizando pesos de forma autónoma hasta que se haya cumplido un umbral de precisión.
 
-Métodos de machine learning
 
+Casos de uso de machine learning en el mundo real
 
-Aprendizaje supervisado
+Reconocimiento de voz
 
-El aprendizaje supervisado, también conocido como machine learning supervisado, se define por el uso de conjuntos de datos etiquetados para entrenar algoritmos para clasificar datos o predecir resultados con precisión. A medida que los datos de entrada se introducen en el modelo, este ajusta sus pesos hasta que se ajustan adecuadamente.
+Se conoce como reconocimiento de voz automático (ASR), reconocimiento de voz computarizado o voz a texto, y es una capacidad que utiliza el procesamiento de lenguaje natural (NLP) para traducir el habla humana en un formato escrito. Muchos dispositivos móviles incorporan el reconocimiento de voz en sus sistemas para realizar búsquedas por voz (por ejemplo, Siri) o mejorar la accesibilidad para enviar mensajes de texto.
 
-Esto ocurre como parte del proceso de validación cruzada para garantizar que el modelo evite el ajuste excedido o el desajuste. El aprendizaje supervisado ayuda a las organizaciones a resolver una variedad de problemas del mundo real a escala, como clasificar el spam en una carpeta separada de la bandeja de entrada. Algunos métodos empleados en el aprendizaje supervisado incluyen redes neuronales, Naïve Bayes, regresión lineal, regresión logística, bosque aleatorio y máquina de vectores de soporte (SVM).
+Atención al cliente
 
+Los chatbots en línea están reemplazando a los agentes humanos a lo largo del recorrido del cliente, cambiando la forma en que pensamos sobre la interacción del cliente en sitios web y plataformas de redes sociales.
 
+Los chatbots responden preguntas frecuentes sobre temas, como el envío, o brindan asesoramiento personalizado, venta cruzada de productos o sugerencias de tallas para los usuarios. Los ejemplos incluyen agentes virtuales en sitios de comercio electrónico; bots de mensajería, utilizando Slack y Facebook Messenger; y tareas que suelen realizar los asistentes virtuales y los asistentes de voz.
 
-Aprendizaje no supervisado
+Visión artificial
 
-El aprendizaje no supervisado, también conocido como machine learning no supervisado, utiliza algoritmos de machine learning para analizar y agrupar conjuntos de datos sin etiquetar (subconjuntos denominados clústeres). Estos algoritmos descubren patrones ocultos o agrupaciones de datos sin necesidad de intervención humana.
+Esta tecnología de IA permite a las computadoras obtener información significativa de imágenes digitales, videos y otras entradas visuales, y luego tomar las medidas adecuadas. Gracias a las neural networks convolucionales, la visión artificial tiene aplicaciones en el etiquetado de fotos en las redes sociales, la obtención de imágenes radiológicas en la sanidad y los coches autónomos en la industria automovilística.
 
-La capacidad del aprendizaje no monitorear para descubrir similitudes y diferencias en la información lo hace ideal para el análisis exploratorio de datos, las estrategias de venta cruzada, la segmentación de clientes y el reconocimiento de imágenes y patrones. También se utiliza para reducir el número de características de un modelo a través del proceso de reducción de la dimensionalidad.
+Motores de recomendación
 
-El análisis de componentes principales (PCA) y la descomposición de valores singulares (SVD) son dos enfoques comunes para esto. Otros algoritmos utilizados en el aprendizaje no supervisado son las neural networks, agrupación de medios k y los métodos de agrupación probabilística.
-
-
-
-Aprendizaje semisupervisado 
-
-El aprendizaje semisupervisado ofrece un punto medio entre el aprendizaje supervisado y el no supervisado. Durante el entrenamiento, utiliza un conjunto de datos etiquetados más pequeño para guiar la clasificación y la extracción de características de un conjunto de datos más grande sin etiquetar. El aprendizaje semisupervisado puede resolver el problema de no tener suficientes datos etiquetados para un algoritmo de aprendizaje supervisado. También ayuda si resulta demasiado costoso etiquetar suficientes datos.
-
-
-
-Aprendizaje por refuerzo
-
-El aprendizaje por refuerzo es un modelo de machine learning similar al aprendizaje supervisado, pero el algoritmo no se entrena con datos de muestra. Este modelo aprende sobre la marcha mediante prueba y error. Se reforzará una secuencia de resultados exitosos para desarrollar la mejor recomendación o política para un problema determinado.
-
-El sistema IBM Watson que ganó el desafío de Jeopardy! en 2011 es un buen ejemplo. El sistema utilizaba el aprendizaje por refuerzo para saber cuándo intentar una respuesta (o una pregunta, por así decirlo), qué casilla seleccionar en el tablero y cuánto apostar, especialmente en los dobles diarios.
-
+Utilizando datos de comportamiento de consumo anteriores, los algoritmos de IA pueden ayudar a descubrir tendencias de datos que se pueden utilizar para desarrollar estrategias de venta cruzada más eficaces. Los motores de recomendación son utilizados por los minoristas en línea para hacer recomendaciones de productos relevantes a los clientes durante el proceso de pago.
 
 
 
