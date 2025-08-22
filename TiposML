@@ -1,0 +1,68 @@
+TIPOS DE MACHINE LEARNING (Supervisado - No Supervisado - Por Refuerzo)
+***********************************************************************
+
+Los tipos de implementación de machine Learning pueden clasificarse en tres categorías diferentes: Aprendizaje Supervisado, Aprendizaje no Supervisado y Aprendizaje de Refuerzo
+
+* APRENDIZAJE SUPERVISADO:
+-------------------------
+
+En el aprendizaje supervisado, los algoritmos trabajan con datos “etiquetados” (labeled data), intentado encontrar una función que, dadas las variables de entrada (input data), les asigne la etiqueta de salida adecuada. El algoritmo se entrena con un “histórico” de datos y así “aprende” a asignar la etiqueta de salida adecuada a un nuevo valor, es decir, predice el valor de salida
+
+Por ejemplo, un detector de spam, analiza el histórico de mensajes, viendo qué función puede representar, según los parámetros de entrada que se definan (el remitente, si el destinatario es individual o parte de una lista, si el asunto contiene determinados términos etc), la asignación de la etiqueta “spam” o “no es spam”. Una vez definida esta función, al introducir un nuevo mensaje no etiquetado, el algoritmo es capaz de asignarle la etiqueta correcta.
+
+El aprendizaje supervisado crea un modelo que realiza predicciones basadas en pruebas en presencia de incertidumbre. Un algoritmo de aprendizaje supervisado toma un conjunto conocido de datos de entrada y respuestas conocidas sobre esos datos (salidas), y entrena un modelo para generar predicciones razonables como respuesta a datos nuevos. Utilice el aprendizaje supervisado si dispone de datos conocidos para la salida que desea predecir. Emplea técnicas de clasificación y regresión para desarrollar modelos de Machine Learning.
+
+El aprendizaje supervisado se suele usar en:
+- Problemas de clasificación (identificación de dígitos, diagnósticos, o detección de fraude de identidad)
+- Problemas de regresión (predicciones meteorológicas, de expectativa de vida, de crecimiento etc)
+
+Los algoritmos más habituales que aplican para el aprendizaje supervisado son:
+
+1. Árboles de decisión: 
+    utiliza datos etiquetados para construir una estructura jerárquica similar a un árbol, con un nodo raíz, ramas y nodos internos, y nodos hoja para la predicción o clasificación. Este algoritmo funciona dividiendo los datos de manera recursiva basándose en las características más relevantes, hasta que los datos se clasifican o predicen en las hojas del árbol.
+2. Clasificación de Naive Bayes:
+    se basa en el Teorema de Bayes y asume que las características de una clase son independientes entre sí (de ahí el término "ingenuo"). Funciona calculando la probabilidad de que una nueva entrada pertenezca a una clase específica, basándose en las probabilidades previas y las características observadas, y es eficiente para la clasificación de textos, identificación de spam y sistemas de recomendación. 
+3. Regresión Logística:
+    predice la probabilidad de que una entrada pertenezca a una clase específica, en lugar de un valor continuo como la regresión lineal. Se utiliza para predecir resultados binarios (como spam o no spam
+4. Support Vector Machines (SVM):
+    clasifica los datos mediante la búsqueda de una línea o un hiperplano óptimos que maximice la distancia entre cada clase en un espacio N-dimensional
+
+* APRENDIZAJE NO SUPERVISADO:
+----------------------------
+
+El aprendizaje no supervisado tiene lugar cuando no se dispone de datos “etiquetados” para el entrenamiento. Sólo conocemos los datos de entrada, pero no existen datos de salida que correspondan a un determinado input. Por tanto, sólo podemos describir la estructura de los datos, para intentar encontrar algún tipo de organización que simplifique el análisis. Por ello, tienen un carácter exploratorio
+
+El aprendizaje no supervisado identifica patrones ocultos o estructuras intrínsecas en los datos. Se emplea para sacar conclusiones sobre conjuntos de datos de entrada sin respuestas etiquetadas.
+
+La agrupación en clusters es la técnica de aprendizaje no supervisado más común. Se emplea para análisis de datos exploratorio, a fin de identificar patrones o grupos ocultos en los datos. Entre sus aplicaciones típicas se incluyen análisis de secuencias genéticas, estudios de mercado y reconocimiento de objetos
+
+Por ejemplo, si una empresa de telefonía móvil desea optimizar la ubicación de torres de telefonía, puede recurrir a Machine Learning para estimar el número de grupos de personas que utilizan las torres. Un teléfono solo puede comunicarse con una torre a la vez, de modo que se emplean algoritmos de agrupación en clusters para diseñar la mejor ubicación de las torres y optimizar la recepción de la señal para grupos - clusters - de clientes.
+
+El aprendizaje no supervisado se suele usar en:
+- Problemas de clustering
+- Agrupamientos de co-ocurrencias
+- Perfilado o profiling
+
+Los tipos de algoritmo más habituales en aprendizaje no supervisado son:
+
+1. Algoritmos de clustering:
+    agrupan datos no etiquetados en conjuntos (clústeres) según su similitud
+2. Análisis de componentes principales
+3. Descomposición en valores singulares (singular value decomposition)
+4. Análisis de componentes principales (Independent Component Analysis)
+
+* APRENDIZAJE POR REFUERZO:
+--------------------------
+
+No todos los algoritmos ML se pueden clasificar como algoritmos de aprendizaje supervisado o no supervisado. Hay una "tierra de nadie" que es donde encajan las técnicas de aprendizaje por refuerzo.
+
+Este tipo aprendizaje se basa en mejorar la respuesta del modelo usando un proceso de retroalimentación. El algoritmo aprende observando el mundo que le rodea. Su información de entrada es el feedback o retroalimentación que obtiene del mundo exterior como respuesta a sus acciones. Por lo tanto, el sistema aprende a base de ensayo-error.
+
+No es un tipo de aprendizaje supervisado, porque no se basa estrictamente en un conjunto de datos etiquetados, sino en la monitorización de la respuesta a las acciones tomadas. Tampoco es un aprendizaje no supervisado, ya que, cuando modelamos a nuestro "aprendiz"sabemos de antemano cuál es la recompensa esperada
+
+Bibliografia:
+IA Google
+https://telefonicatech.com/blog/que-algoritmo-elegir-en-ml-aprendizaje
+https://la.mathworks.com/discovery/machine-learning.html
+
+
