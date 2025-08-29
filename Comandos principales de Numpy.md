@@ -1358,17 +1358,131 @@ https://www.analyticslane.com/2024/11/25/
 
 https://imaster.academy/contenidos-tematicos/talentotech/TalentoTech/M2unidad2/
 
+# ===============================================================================
+# PANDAS – CREACIÓN Y MANIPULACIÓN DE DATAFRAMES Y SERIES
+# ===============================================================================
 
+Pandas es una biblioteca de Python para análisis de datos que ofrece estructuras como Series (unidimensional) y DataFrames (bidimensionales) para manipular y analizar datos.
+Crear estructuras de datos en Pandas, se usan objetos como DataFrames y Series. Estos se pueden crear a partir de fuentes de datos como listas, diccionarios de Python, o leyendo datos de archivos externos en formatos como CSV, Excel o JSON. Para la creación, se importará la biblioteca Pandas y se utilizarán funciones como pd.DataFrame() para los DataFrames y pd.Series() para las Series.
+DataFrame es el tipo de datos fundamental de la librería pandas,  la habilidad principal que debemos tener con esta librería es la manera de crear un DataFrame a partir de datos. El problema principal es que los datos de origen suelen venir en muy variadas formas, ya sea en una lista, un diccionario, un array de NumPy, un fichero de texto plano, un fichero CSV (valores separados por comas), un fichero JSON, una base de datos, etc. 
+Un DataFrame está compuesto de tres elementos principales: los datos propiamente dichos, los índices de las filas y los nombres de las columnas. Los índices de las filas (o simplemente “índices”) son los identificadores únicos de cada fila. Las filas se indexan con valores numéricos por defecto, pero también puedes sustituirlos por cadenas. Ten en cuenta que los DataFrames de Pandas están indexados desde cero, es decir, la numeración de los índices empieza a partir de 0.
+Los DataFrames de Pandas tienen una estructura tabular y, por lo tanto, son muy similares a las tablas de Excel o de SQL
+Los DataFrames de Pandas ofrecen una gran variedad de técnicas y métodos para procesar, analizar y visualizar datos. Aalgunos de los métodos más importantes para la manipulación de datos con los DataFrames de Pandas:
 
+# ================================
+# Importar librerías
+# ================================
+import pandas as pd
 
+Explicación:
+Se importa la librería Pandas, que será usada para crear y manipular estructuras de datos. 
 
+# ================================
+# Creación de una Serie
+# ================================
+serie = pd.Series([10, 20, 30, 40, 50], name="Números")
+print("Serie creada:\n", serie)
 
+Una serie es el primer tipo de datos de pandas y es muy similar a una matriz NumPy (de hecho está construida sobre el objeto de matriz NumPy). Lo que diferencia un arreglo NumPy de una serie, es que una serie puede tener etiquetas en los ejes, lo que significa que puede ser indexada por una etiqueta, en lugar de solo una ubicación numérica. Tampoco necesita contener datos numéricos, puede contener cualquier Objeto de Python arbitrario
+Una Serie en Pandas es similar a una lista o un vector, pero con un índice que identifica cada elemento. Aquí se crea una serie llamada Números con 5 valores enteros
 
+# ================================
+# Creación de una Dataframes
+# ================================
 
+datos = {
+    "Nombre": ["Ana", "Luis", "Pedro", "Maria"],
+    "Edad": [23, 34, 29, 40],
+    "Ciudad": ["Bogotá", "Medellín", "Cali", "Chía"]
+}
+df = pd.DataFrame(datos)
+print("DataFrame inicial:\n", df)
 
+Dataframes es una tabla de datos con filas y columnas etiquetadas, que representa, una tabla de datos de dos dimensiones, con filas y columnas. Además, cada fila y cada columna puede tener, opcionalmente, su nombre o etiqueta.
 
+# ================================
+# Carga de datos desde un CSV
+# ================================
 
+Un archivo .CSV (Valores Separados por Comas) es un formato de archivo de texto plano que almacena datos en una estructura de tabla, utilizando comas para separar cada valor dentro de una fila. Es ideal para el intercambio sencillo de datos entre diferentes aplicaciones, como hojas de cálculo y bases de datos, porque permite mover y editar información de texto y números fácilmente. Los archivos CSV contienen solo texto y valores, no se guarda ningún formato, gráfico u otro contenido de la hoja de cálculo. Cada fila de datos está separada por un carácter de retorno de carro, y los valores dentro de cada fila se separan con comas. Dentro de las ventajas Es sencillo de crear, editar y leer, lo que lo hace ideal para el intercambio de datos
+Primero se crea el DataFrame (df), luego se guarda, y por último se vuelve a leer
 
+# ================================
+# Mostrar las primeras filas (head())
+# ================================
+print("Primeras filas del DataFrame:\n", df.head(2))
 
+El método head() permite visualizar las primeras filas de un DataFrame. Aquí mostramos solo las primeras 2 filas para inspeccionar rápidamente los datos
 
+# ================================
+# Ver tipos de datos (dtypes)
+# ================================
+print("Tipos de datos:\n", df.dtypes)
 
+El método dtypes devuelve el tipo de dato de cada columna (por ejemplo: int64 para números enteros, object para texto). Esto es útil para saber qué operaciones podemos hacer con cada columna.
+
+# ================================
+# Añadir Columnas
+# ================================
+df['Nombre'] = None
+print(df)
+
+La dimensión principal del DataFrame son las columnas, con lo que el acceso a las columnas siempre es un poco más directo que al de las filas. Usando la típica notación de corchetes accedemos antes a las columnas que a las filas, al contrario de lo que es habitual. Una manera de añadir una nueva columna a un DataFrame es asignarle directamente los valores que debe tener esa columna, tal como se haría en un diccionario y la notación de corchetes. Si no se quiere introducir valores se indica None
+
+# ================================
+# Selección de columnas
+# ================================
+print(df["Nombre"])   # Una columna
+print(df[["Nombre", "Edad"]])  # Varias columnas
+
+Se pueden seleccionar columnas específicas de un DataFrame.
+df["Nombre"] devuelve solo la columna de nombres.
+df[["Nombre", "Edad"]] devuelve varias columnas a la vez.
+
+# ================================
+# Filtrado de filas
+# ================================
+print(df[df["Edad"] > 30])
+
+Se puede aplicar una condición para filtrar filas. Ejemplo se puede mostrar únicamente las personas cuya edad es mayor a 30 años
+
+# ================================
+# Guardar y cargar CSV
+# ================================
+# Crear un CSV de ejemplo
+df.to_csv("personas.csv", index=False)
+
+# Leer el CSV
+df_csv = pd.read_csv("personas.csv")
+print(df_csv.head())
+
+.to_csv guarda el DataFrame en un archivo CSV. # .read_csv carga el archivo CSV en otro DataFrame.
+
+# ================================
+# Estadísticas básicas
+# ================================
+print("Descripción estadística de Edad:\n", df["Edad"].describe())
+
+El método describe() nos proporciona un resumen estadístico del DataFrame, que incluye la media, la desviación estándar, los valores mínimos y máximos, y los percentiles de cada columna numérica
+
+# ================================
+# Ordenar valores
+# ================================
+rint("DataFrame ordenado por Edad (descendente):\n", df.sort_values(by="Edad", ascending=False))
+
+.sort_values permite ordenar los datos según una columna.
+
+# ================================
+# Nueva columna calculada
+# ================================
+df["Edad_en_5_años"] = df["Edad"] + 5
+print("DataFrame con nueva columna:\n", df)
+
+Se crea una nueva columna a partir de operaciones sobre otra, para este caso esta creando la edad que tednria la persona en 5 años
+
+# ================================
+# Bibliografia
+# ================================
+https://www.codigopiton.com/como-crear-un-dataframe-con-pandas-y-python/
+https://dev.to/centroturing/manipulacion-y-analisis-de-dataframes-con-pandas-1dgj
+https://www.ionos.com/es-us/digitalguide/paginas-web/desarrollo-web/dataframes-de-pandas-python/
