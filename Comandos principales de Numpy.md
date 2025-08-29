@@ -976,3 +976,399 @@ https://flexiple.com/python/numpy-reshape
 https://www.geeksforgeeks.org/machine-learning/numpy-concatenate-function-python/
 
 https://python-para-impacientes.blogspot.com/2019/12/calculo-con-arrays-numpy.html
+
+# Operaciones estadísticas y funciones avanzadas
+# (mean, std, sum, arange, linspace, random, álgebra lineal).
+     Rama:B-numpy-estadisticas
+
+# Funciones estadísticas 
+Estadística es una rama de las matemáticas que permite recoger, organizar, analizar e interpretar datos, sacar conclusiones y tomar decisiones a partir de la información. En Numpy podemos encontrar funciones para calcular métricas como la media, la mediana, la varianza, la desviación estándar, el mínimo, el máximo y más. Funciones estadísticas proporcionadas por NumPy  se encuentran: 
+•	median() : La mediana representa el valor que se encuentra justo en el centro de un conjunto de datos ordenados.
+•	mean(): La media es una medida de tendencia central que representa el valor promedio de un conjunto de datos. El promedio.
+•	std(): La desviación estándar mide cuánto se dispersan los datos respecto a la media. Es decir, indica si los valores están muy alejados o cercanos al promedio.
+•	percentile(): Es una medida que indica el valor por debajo del cual cae un porcentaje determinado de datos en un grupo de datos.
+•	min(): Valor mínimo de una matriz
+•	max():  Elemento máximo de una matriz
+
+Funciones:
+# 1. mean () – Promedio
+# ===============================
+import numpy as np
+
+a = np.array([10,15, 20, 25, 30, 35, 40, 45, 50])
+print("Datos:", a)
+print("Promedio:", np.mean(a))
+*** Resultado: ***
+Datos: [10 15 20 25 30 35 40 45 50]
+Promedio: 30.0
+# ===============================
+
+# 2. std () – Desviación Estándar
+# ===============================
+
+import numpy as np
+
+a = np.array([10,15, 20, 25, 30, 35, 40, 45, 50])
+print("Datos:", a)
+print("Promedio:", np.mean(a))
+
+print("Desviación Estándar:", np.std(a))
+*** Resultado: ***
+Datos: [10 15 20 25 30 35 40 45 50]
+Promedio: 30.0
+Desviación Estándar: 12.909944487358056
+# ===============================
+
+# 3. sum() – Suma (Suma los datos dentro del arreglo)
+# ===============================
+[1] import numpy as np
+
+a = np.array([10,15, 20, 25, 30, 35, 40, 45, 50])
+print("Datos:", a)
+print("Promedio:", np.mean(a))
+
+[2] print("Desviación Estándar:", np.std(a))
+    print("Total de Datos:", np.sum(a))
+*** Resultado: ***
+
+Datos: [10 15 20 25 30 35 40 45 50]
+Promedio: 30.0
+Desviación Estándar: 12.909944487358056
+Total de Datos: 270
+# ===============================
+Ejemplo de Aplicación:
+
+# =================================
+import numpy as np
+a = np.array([25, 28, 28, 30, 32, 35, 37, 39, 40])
+b = np.array([3, 4, 5, 10, 12, 25])
+
+print("Entregas:", a)
+print("Devoluciones:", b)
+
+print("\n *** Datos Entregas *** ")
+print("Promedio: ", np.mean(a))
+print("Desviación Estándar:", np.std(a))
+print("Total entregas:", np.sum(a))
+
+print("\n*** Datos Devoluciones *** ")
+print("Promedio:", np.mean(b))
+print("Desviación Estándar:", np.std(b))
+print("Total Devoluciones:", np.sum(b))
+
+print("\n ** Entregas vs Devoluciones **")
+print("Diferencia de Promedios:", np.mean(a) - np.mean(b))
+print("Diferencia de Desviaciones:", np.std(a) - np.std(b))
+print("Diferencia de Sumas:", np.sum(a) - np.sum(b))
+  *** Resultado: ***
+Entregas: [25 28 28 30 32 35 37 39 40]
+Devoluciones: [ 3  4  5 10 12 25]
+
+ *** Datos Entregas *** 
+Promedio:  32.666666666666664
+Desviación Estándar: 5.033222956847166
+Total entregas: 294
+
+*** Datos Devoluciones *** 
+Promedio: 9.833333333333334
+Desviación Estándar: 7.51480021173033
+Total Devoluciones: 59
+
+*** Entregas vs Devoluciones ***
+Diferencia de Promedios: 22.83333333333333
+Diferencia de Desviaciones: -2.481577254883164
+Diferencia de Sumas: 235
+# ================================
+
+# Funciones de creación de arreglos:
+Un arreglo (o array en inglés) es una estructura de datos que permite almacenar múltiples valores en una sola variable, organizados en una secuencia. Los arreglos son fundamentales para realizar operaciones matemáticas de forma eficiente y vectorizada en los campos de programación científica y análisis de datos. El núcleo de NumPy es el arreglo o array. A diferencia de las listas en Python, los arreglos de NumPy son más eficientes en términos de almacenamiento y operaciones.
+Funciones:
+# 1.	arange():
+Crea un arreglo con valores espaciados uniformemente dentro de un intervalo.
+•	arange(stop): Valores creados dentro del intervalo semiabierto, incluye el inicio del arreglo pero no el final.  [0, stop)
+
+•	arange(start, stop): Los valores se generan dentro del intervalo semiabierto, incluye el valor inicial y el valor final. [start, stop)
+•	arange(start, stop, step): Los valores se generan dentro del intervalo semiabierto, con un espaciamiento entre valores dado por .[start, stop)step. Incluye el valor inicial, excluye el valor final y incrementa los valores.
+Ejemplo: 
+# ===============================
+import numpy as np
+a = np.arange(8)  # arreglo arange(stop)
+print("a:",a)
+
+b = np.arange(3, 12)  # arreglo arange(start, stop) 
+print("b:",b)
+
+c = np.arange(3,20,3) #arange(start, stop, step) intervalo de 3  
+print("c:", c)
+
+  *** Resultado: ***
+
+ a: [0 1 2 3 4 5 6 7]
+b: [ 3  4  5  6  7  8  9 10 11]
+c: [ 3  6  9 12 15 18]
+
+# ==============================
+
+# 2.	linspace(): 
+Genera un arreglo con un número específico de puntos espaciados uniformemente en un intervalo. Es útil cuando se necesita una cantidad precisa de puntos calculados sobre el intervalo [ inicio , fin ].
+•	np.linspace(start, stop, num).genera num valores equiespaciados entre start y stop (por defecto incluye stop).
+
+# ================================
+
+import numpy as np
+#Devolver 5 numeros en un intervalo de 2 a 4
+print("Intervalo:2 a 4, num Puntos =5,  puntos:", np.linspace(2, 4, 5))
+
+  *** Resultado: ****
+
+Intervalo:2 a 4, num Puntos =5,  puntos: [2.  2.5 3.  3.5 4. ]
+
+# =================================
+
+# Funciones Aleatorias con NumPy
+
+Utiliza el módulo random para crear arreglos con valores aleatorios. En el trabajo con datos simulados, es común utilizar números aleatorios para imitar comportamientos reales, especialmente en modelos de Machine Learning, experimentos estadísticos y simulaciones complejas. Sin embargo, generar aleatoriedad de forma eficiente, reproducible y con control sobre la distribución de los datos es un desafío clave, ya que influye directamente en la validez y precisión de los resultados simulados.
+
+# 1.	random()
+•	Enteros aleatorios (randint): Genera enteros dentro de un intervalo definido [low, high).
+•	Aleatorios uniformes: Crea un array con las dimensiones especificadas y lo llena con valores aleatorios de una distribución uniforme en el intervalo [0, 1).
+•	Distribución Normal (Gaussiana): Generar datos con media y desviación estándar personalizables.
+•	Aleatorios a partir de una semilla: Genera siempre los mismos resultados.
+•	Selección aleatoria con muestreo: Permite extraer elementos de un array, con o sin reemplazo.
+
+# ================================
+
+import numpy as np
+
+a = np.random.rand(4) # Crea un arreglo de 5 numeros aleatorios entre 0 y 1.
+print("Arreglo A: ", a)
+
+b= np.random.randint(3, 15, size=8) # arrgelo de 8 numero aleatorios entre 3 y 15
+print("Arreglo B:", b)
+
+c = np.random.uniform(10, 30, 3) # 5 valores uniformes entre 10 y 30
+print("Uniforme [10,30]:", c)
+
+# Normal con media 50 y desviación 5
+d = np.random.normal(20, 5, 5)
+print("Normal (media=20, Desvacion=5):", d)
+
+np.random.seed(42) # Aleatorio con semilla
+e = np.random.randint(0, 100, 5)
+print("Semilla:", e)
+
+  *** Resultado: ***
+Arreglo A:  [0.38246199 0.98323089 0.46676289 0.85994041]
+Arreglo B: [ 9  7 11  9  4  6 11 14]
+Uniforme [10,30]: [21.26576436 17.70833005 10.31932504]
+Normal (media=20, Desvacion=5): [16.16011749 16.25461738 16.10808996 24.74421429 27.90425293]
+Con semilla: [51 92 14 71 60]
+
+# ====================================
+
+# Álgebra lineal:
+Es el conjunto de herramientas que esta biblioteca de Python ofrece para trabajar con vectores, matrices y transformaciones lineales, de forma eficiente y estructurada. Es especialmente útil en ciencia de datos, ingeniería, estadística y machine learning, donde los cálculos matriciales son fundamentales.
+# 1.	Vectores y matrices: 
+Un vector se implementa como un array unidimensional, mientras que una matriz es un array bidimensional. Esto permite una sintaxis clara y consistente para todas las operaciones de álgebra lineal.
+Producto punto (dot() o @): Multiplicar matrices es una operación fundamental
+# ===================================
+import numpy as np
+# crear las matrices
+A = np.array([[1, 2],
+              [3, 4]])
+
+B = np.array([[5, 6],
+              [7, 8]])
+
+print("Matriz A:",A)
+print("Matriz B:",B )
+
+  *** Resultado  ***
+Matriz A: [[1 2]
+ [3 4]]
+Matriz B: [[5 6]
+ [7 8]]
+
+# ===================================
+
+# 2.	Operaciones básicas:
+suma, resta, multiplicación, transposición
+
+import numpy as np
+# crear las matrices
+A = np.array([[1, 2],
+              [3, 4]])
+C = A + B #suma
+print("\nSuma A + B:",C)
+
+D = A - B #resta
+print("\nResta A - B:", D)
+
+E = A * B #multiplicación
+print("\nMultiplicación elemento a elemento A * B:", E)
+
+F = np.dot(A, B) # producto matricial
+print("\nProducto matricial A x B:", F)
+
+print("\nTranspuesta de A:")# Transpuesta
+print(A.T)
+A_inv = np.linalg.inv(A)#inversa
+print("\nInversa de A:")
+print(A_inv)
+
+# Resultado
+Suma A + B: [[ 6  8]
+ [10 12]]
+
+Resta A - B: [[-4 -4]
+ [-4 -4]]
+
+Multiplicación elemento a elemento A * B: [[ 5 12]
+ [21 32]]
+
+Producto matricial A x B: [[19 22]
+ [43 50]]
+
+Transpuesta de A:
+[[1 3]
+ [2 4]]
+
+Inversa de A:
+[[-2.   1. ]
+ [ 1.5 -0.5]]
+
+ # =============================
+
+# 3.	Determinante y matrices inversas.
+
+El determinante indica si una matriz cuadrada es invertible (≠ 0) y tiene aplicaciones en sistemas lineales, transformaciones y geometría.
+# =============================
+import numpy as np
+Matriz = np.array([[6, 1, 1], [4, -2, 5], [2, 8, 7]])
+
+# Calculamos la determinante
+determinante_3x3 = np.linalg.det(Matriz)
+
+print("\nMatriz 3x3:")
+print(Matriz)
+print(f"Determinante: {determinante_3x3}")
+
+# Resultado:
+Matriz 3x3:
+[[ 6  1  1]
+ [ 4 -2  5]
+ [ 2  8  7]]
+Determinante: -306.0
+        *** ============== ***
+import numpy as np
+M_original = np.array([[4, 7], [2, 6]])
+
+# Calculamos la matriz inversa
+M_inversa = np.linalg.inv(M_original)
+
+print("Matriz original:", M_original)
+print("\nMatriz inversa:", M_inversa)
+
+# Resultado
+Matriz original: [[4 7]
+ [2 6]]
+
+Matriz inversa: [[ 0.6 -0.7]
+ [-0.2  0.4]]
+# ==============================
+
+# 4.	Autovalores y autovectores
+
+Los autovalores (eigenvalues) y autovectores (eigenvectors) son conceptos que describen propiedades especiales de las transformaciones lineales representadas por matrices. Para una matriz cuadrada A, un vector no nulo v es un vector propio con valor propio λ si Av = λv.
+# ============================
+import numpy as np
+M_A = np.array([[4, 2],
+              [1, 3]])
+print("Matriz A:",M_A)
+
+valores, vectores = np.linalg.eig(M_A)
+print("\nAutovalores:", valores)
+print("\nAutovectores (columnas):", vectores)
+
+for i in range(len(valores)):
+    v = vectores[:, i]  # i-ésimo autovector
+    λ = valores[i]      # i-ésimo autovalor
+    print(f"\nVerificación para autovalor λ = {λ:.2f}:")
+    print("A·v =", M_A.dot(v))
+    print("λ·v =", λ * v)
+    *** Resultado ***
+Matriz A: [[4 2]
+ [1 3]]
+
+Autovalores: [5. 2.]
+
+Autovectores (columnas): [[ 0.89442719 -0.70710678]
+ [ 0.4472136   0.70710678]]
+
+Verificación para autovalor λ = 5.00:
+A·v = [4.47213595 2.23606798]
+λ·v = [4.47213595 2.23606798]
+
+Verificación para autovalor λ = 2.00:
+A·v = [-1.41421356  1.41421356]
+λ·v = [-1.41421356  1.41421356]
+# ================================
+# 5.	Sistemas de ecuaciones lineales:
+Un sistema de ecuaciones lineales se puede expresar en forma matricial como Ax = b, donde A es la matriz de coeficientes, x es el vector de incógnitas y b es el vector de términos independientes.
+Numpy proporciona la función solve(), para resolver ecuaciones lineales.
+
+# =================================
+import numpy as np
+A = np.array([[2, 1],
+              [1, -1]])
+
+B = np.array([8, 1])#vector de resultado
+
+print("Matriz A (coeficientes):")
+print(A)
+print("\nVector B (resultados):")
+print(B)
+
+X = np.linalg.solve(A, B)
+print("\nSolución del sistema (x, y):")
+print(X)
+    *** Resultado ***
+Matriz A (coeficientes):
+[[ 2  1]
+ [ 1 -1]]
+
+Vector B (resultados):
+[8 1]
+
+Solución del sistema (x, y):
+[3. 2.]     
+# =================================
+
+Bibliografia:
+
+https://www.tutorialspoint.com/numpy/numpy_statistical_functions.htm
+
+ https://www.programiz.com/python-programming/numpy/statistical-functions
+
+https://numpy.org/devdocs/reference/generated/numpy.arange.html
+
+https://imaster.academy/contenidos-tematicos/talentotech/TalentoTech/M2unidad2/
+
+https://www.analyticslane.com/2024/11/25/
+
+https://imaster.academy/contenidos-tematicos/talentotech/TalentoTech/M2unidad2/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
