@@ -1407,9 +1407,9 @@ Dataframes es una tabla de datos con filas y columnas etiquetadas, que represent
 Un archivo .CSV (Valores Separados por Comas) es un formato de archivo de texto plano que almacena datos en una estructura de tabla, utilizando comas para separar cada valor dentro de una fila. Es ideal para el intercambio sencillo de datos entre diferentes aplicaciones, como hojas de cálculo y bases de datos, porque permite mover y editar información de texto y números fácilmente. Los archivos CSV contienen solo texto y valores, no se guarda ningún formato, gráfico u otro contenido de la hoja de cálculo. Cada fila de datos está separada por un carácter de retorno de carro, y los valores dentro de cada fila se separan con comas. Dentro de las ventajas Es sencillo de crear, editar y leer, lo que lo hace ideal para el intercambio de datos
 Primero se crea el DataFrame (df), luego se guarda, y por último se vuelve a leer
 
-# ================================
+# ===================================
 # Mostrar las primeras filas (head())
-# ================================
+# ===================================
 print("Primeras filas del DataFrame:\n", df.head(2))
 
 El método head() permite visualizar las primeras filas de un DataFrame. Aquí mostramos solo las primeras 2 filas para inspeccionar rápidamente los datos
