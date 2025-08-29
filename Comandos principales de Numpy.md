@@ -1341,6 +1341,7 @@ Vector B (resultados):
 [8 1]
 
 Solución del sistema (x, y):
+
 [3. 2.]     
 # =================================
 
