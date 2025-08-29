@@ -978,6 +978,7 @@ https://www.geeksforgeeks.org/machine-learning/numpy-concatenate-function-python
 https://python-para-impacientes.blogspot.com/2019/12/calculo-con-arrays-numpy.html
 
 # Operaciones estadísticas y funciones avanzadas
+# (mean, std, sum, arange, linspace, random, álgebra lineal).
      Rama:B-numpy-estadisticas
 
 # Funciones estadísticas 
@@ -988,10 +989,53 @@ Estadística es una rama de las matemáticas que permite recoger, organizar, ana
 •	percentile(): Es una medida que indica el valor por debajo del cual cae un porcentaje determinado de datos en un grupo de datos.
 •	min(): Valor mínimo de una matriz
 •	max():  Elemento máximo de una matriz
+
 Funciones:
-1. mean () – Promedio
-2. std () – Desviación Estándar
-3. sum() – Suma (Suma los datos dentro del arreglo)
+# 1. mean () – Promedio
+# ===============================
+import numpy as np
+
+a = np.array([10,15, 20, 25, 30, 35, 40, 45, 50])
+print("Datos:", a)
+print("Promedio:", np.mean(a))
+*** Resultado: ***
+Datos: [10 15 20 25 30 35 40 45 50]
+Promedio: 30.0
+# ===============================
+
+# 2. std () – Desviación Estándar
+# ===============================
+
+import numpy as np
+
+a = np.array([10,15, 20, 25, 30, 35, 40, 45, 50])
+print("Datos:", a)
+print("Promedio:", np.mean(a))
+
+print("Desviación Estándar:", np.std(a))
+*** Resultado: ***
+Datos: [10 15 20 25 30 35 40 45 50]
+Promedio: 30.0
+Desviación Estándar: 12.909944487358056
+# ===============================
+
+# 3. sum() – Suma (Suma los datos dentro del arreglo)
+# ===============================
+[1] import numpy as np
+
+a = np.array([10,15, 20, 25, 30, 35, 40, 45, 50])
+print("Datos:", a)
+print("Promedio:", np.mean(a))
+
+[2] print("Desviación Estándar:", np.std(a))
+    print("Total de Datos:", np.sum(a))
+*** Resultado: ***
+
+Datos: [10 15 20 25 30 35 40 45 50]
+Promedio: 30.0
+Desviación Estándar: 12.909944487358056
+Total de Datos: 270
+# ===============================
 Ejemplo de Aplicación:
 
 # =================================
@@ -1016,7 +1060,7 @@ print("\n ** Entregas vs Devoluciones **")
 print("Diferencia de Promedios:", np.mean(a) - np.mean(b))
 print("Diferencia de Desviaciones:", np.std(a) - np.std(b))
 print("Diferencia de Sumas:", np.sum(a) - np.sum(b))
-# Resultado:
+  *** Resultado: ***
 Entregas: [25 28 28 30 32 35 37 39 40]
 Devoluciones: [ 3  4  5 10 12 25]
 
@@ -1057,7 +1101,7 @@ print("b:",b)
 c = np.arange(3,20,3) #arange(start, stop, step) intervalo de 3  
 print("c:", c)
 
- # Resultado:
+  *** Resultado: ***
 
  a: [0 1 2 3 4 5 6 7]
 b: [ 3  4  5  6  7  8  9 10 11]
@@ -1075,7 +1119,7 @@ import numpy as np
 #Devolver 5 numeros en un intervalo de 2 a 4
 print("Intervalo:2 a 4, num Puntos =5,  puntos:", np.linspace(2, 4, 5))
 
-# Resultado:
+  *** Resultado: ****
 
 Intervalo:2 a 4, num Puntos =5,  puntos: [2.  2.5 3.  3.5 4. ]
 
@@ -1113,7 +1157,7 @@ np.random.seed(42) # Aleatorio con semilla
 e = np.random.randint(0, 100, 5)
 print("Semilla:", e)
 
-# Resultado:
+  *** Resultado: ***
 Arreglo A:  [0.38246199 0.98323089 0.46676289 0.85994041]
 Arreglo B: [ 9  7 11  9  4  6 11 14]
 Uniforme [10,30]: [21.26576436 17.70833005 10.31932504]
@@ -1139,7 +1183,7 @@ B = np.array([[5, 6],
 print("Matriz A:",A)
 print("Matriz B:",B )
 
-# Resultado
+  *** Resultado  ***
 Matriz A: [[1 2]
  [3 4]]
 Matriz B: [[5 6]
@@ -1199,6 +1243,7 @@ Inversa de A:
 
 El determinante indica si una matriz cuadrada es invertible (≠ 0) y tiene aplicaciones en sistemas lineales, transformaciones y geometría.
 # =============================
+import numpy as np
 Matriz = np.array([[6, 1, 1], [4, -2, 5], [2, 8, 7]])
 
 # Calculamos la determinante
@@ -1215,6 +1260,7 @@ Matriz 3x3:
  [ 2  8  7]]
 Determinante: -306.0
         *** ============== ***
+import numpy as np
 M_original = np.array([[4, 7], [2, 6]])
 
 # Calculamos la matriz inversa
@@ -1235,6 +1281,7 @@ Matriz inversa: [[ 0.6 -0.7]
 
 Los autovalores (eigenvalues) y autovectores (eigenvectors) son conceptos que describen propiedades especiales de las transformaciones lineales representadas por matrices. Para una matriz cuadrada A, un vector no nulo v es un vector propio con valor propio λ si Av = λv.
 # ============================
+import numpy as np
 M_A = np.array([[4, 2],
               [1, 3]])
 print("Matriz A:",M_A)
@@ -1271,6 +1318,7 @@ Un sistema de ecuaciones lineales se puede expresar en forma matricial como Ax =
 Numpy proporciona la función solve(), para resolver ecuaciones lineales.
 
 # =================================
+import numpy as np
 A = np.array([[2, 1],
               [1, -1]])
 
@@ -1296,6 +1344,19 @@ Solución del sistema (x, y):
 [3. 2.]     
 # =================================
 
+Bibliografia:
+
+https://www.tutorialspoint.com/numpy/numpy_statistical_functions.htm
+
+ https://www.programiz.com/python-programming/numpy/statistical-functions
+
+https://numpy.org/devdocs/reference/generated/numpy.arange.html
+
+https://imaster.academy/contenidos-tematicos/talentotech/TalentoTech/M2unidad2/
+
+https://www.analyticslane.com/2024/11/25/
+
+https://imaster.academy/contenidos-tematicos/talentotech/TalentoTech/M2unidad2/
 
 
 
